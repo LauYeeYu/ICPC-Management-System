@@ -1,55 +1,10 @@
-# Structure:
+# ICPC Management System
 
-### Main Elements
+This is an ICPC management system, also an assignment of programming course of SJTU ACM class 2025. For more information about this assignment, please click [here](https://github.com/ACM-Programming-2021/ICPC-Management-System-2021).
 
-##### class Team: Storing Almost All Data of Each Team
+## Functions
 
-public:
-
-- std::string TeamName
-- int Rank: Delayed ranking (update in FLUSH)
-- int FrozenCount : Showing the number of frozen problems
-- int PassedCount: Showing the number of passed problems
-- int Penalty: Penalty
-
-private:
-
-- SubmitStatus LastSubmitStatus
-- int LastSubmitProblem
-- int LastSubmitTime
-- int FailTimes[26]
-- bool Passed[26]
-- int PassedTimeUp[26]       : Showing the pass time in ascending order
-- int FirstAccepted[26]      : First accepted time
-- int LastWrongAnswer[26]    : Last wrong answer time
-- int LastRuntimeError[26]   : Last runtime error time
-- int LastTimeLimitExceed[26]: Last time limit exceed time
-- int LastAcceptedProblem
-- int LastWrongAnswerProblem
-- int LastRuntimeErrorProblem
-- int LastTimeLimitExceedProblem
-- SubmitStatus LastProblemStatus[26]
-- int FrozenFailTimes[26]
-- int FrozenTryTimes[26]
-- bool FrozenProblem[26]
-- int FrozenFirstAccepted[26]
-- int FrozenLastAccepted[26]
-- SubmitStatus FrozenLastProblemStatus[26]
-
-##### std::map< std::string, Team > TeamMap: Gathering ALL Team Data
-
-##### class NameOfTeam
-
-- std::string TeamName
-- std::unordered_map<std::string, Team> Pointer : Pointing to TeamMap
-
-##### std::set< NameOfTeam > TeamRank: Real time rank list
-
-##### std::string DelayedTeamRanking[20000]: Delayed rank list
-
-# Function:
-
-## Add Team
+### Add Team
 
 #### Input Format:
 
@@ -67,9 +22,7 @@ Check whether there is a identical name. If there is no identical name, emplace 
 
 `std::cout << "[Error]Add failed: competition has started." << std::endl;`
 
-
-
-## Start
+### Start
 
 #### Input Format:
 
